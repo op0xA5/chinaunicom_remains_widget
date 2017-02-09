@@ -4,15 +4,35 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>UnicomPackageRemain.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>unicom_package_remain.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>unicom_package_remain_widget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>9D269C231E4AC8E2000EFB4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9DFA3D421E4C527D00454875</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9DFA3D591E4C54D300454875</key>
 		<dict>
 			<key>primary</key>
 			<true/>

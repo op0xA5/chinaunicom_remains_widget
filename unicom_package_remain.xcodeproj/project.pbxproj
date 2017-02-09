@@ -12,7 +12,62 @@
 		9D269C2D1E4AC8E2000EFB4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D269C2B1E4AC8E2000EFB4D /* Main.storyboard */; };
 		9D269C2F1E4AC8E2000EFB4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D269C2E1E4AC8E2000EFB4D /* Assets.xcassets */; };
 		9D269C321E4AC8E2000EFB4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D269C301E4AC8E2000EFB4D /* LaunchScreen.storyboard */; };
+		9D269C401E4AF8A1000EFB4D /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D269C3F1E4AF8A1000EFB4D /* SettingsController.swift */; };
+		9D269C441E4B00FD000EFB4D /* RemainsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D269C431E4B00FD000EFB4D /* RemainsController.swift */; };
+		9D269C461E4B0940000EFB4D /* UserInfoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D269C451E4B0940000EFB4D /* UserInfoApi.swift */; };
+		9DFA3D461E4C527E00454875 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFA3D451E4C527E00454875 /* NotificationCenter.framework */; };
+		9DFA3D491E4C527E00454875 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA3D481E4C527E00454875 /* TodayViewController.swift */; };
+		9DFA3D4C1E4C527E00454875 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFA3D4A1E4C527E00454875 /* MainInterface.storyboard */; };
+		9DFA3D501E4C527E00454875 /* unicom_package_remain_widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9DFA3D431E4C527D00454875 /* unicom_package_remain_widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9DFA3D5E1E4C54D300454875 /* UnicomPackageRemain.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DFA3D5C1E4C54D300454875 /* UnicomPackageRemain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DFA3D611E4C54D300454875 /* UnicomPackageRemain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFA3D5A1E4C54D300454875 /* UnicomPackageRemain.framework */; };
+		9DFA3D621E4C54D300454875 /* UnicomPackageRemain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFA3D5A1E4C54D300454875 /* UnicomPackageRemain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9DFA3D681E4C551500454875 /* UserInfoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA3D671E4C551500454875 /* UserInfoApi.swift */; };
+		9DFA3D7B1E4C695B00454875 /* RemainItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA3D791E4C695B00454875 /* RemainItemViewController.swift */; };
+		9DFA3D7C1E4C695B00454875 /* RemainItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DFA3D7A1E4C695B00454875 /* RemainItemViewController.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9DFA3D4E1E4C527E00454875 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D269C1C1E4AC8E2000EFB4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DFA3D421E4C527D00454875;
+			remoteInfo = unicom_package_remain_widget;
+		};
+		9DFA3D5F1E4C54D300454875 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D269C1C1E4AC8E2000EFB4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DFA3D591E4C54D300454875;
+			remoteInfo = UnicomPackageRemain;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9DFA3D541E4C527E00454875 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9DFA3D501E4C527E00454875 /* unicom_package_remain_widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DFA3D661E4C54D300454875 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9DFA3D621E4C54D300454875 /* UnicomPackageRemain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9D269C241E4AC8E2000EFB4D /* unicom_package_remain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unicom_package_remain.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +77,42 @@
 		9D269C2E1E4AC8E2000EFB4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D269C311E4AC8E2000EFB4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D269C331E4AC8E2000EFB4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D269C3F1E4AF8A1000EFB4D /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		9D269C431E4B00FD000EFB4D /* RemainsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemainsController.swift; sourceTree = "<group>"; };
+		9D269C451E4B0940000EFB4D /* UserInfoApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoApi.swift; sourceTree = "<group>"; };
+		9DFA3D431E4C527D00454875 /* unicom_package_remain_widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = unicom_package_remain_widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DFA3D451E4C527E00454875 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		9DFA3D481E4C527E00454875 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		9DFA3D4B1E4C527E00454875 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		9DFA3D4D1E4C527E00454875 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DFA3D5A1E4C54D300454875 /* UnicomPackageRemain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UnicomPackageRemain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DFA3D5C1E4C54D300454875 /* UnicomPackageRemain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnicomPackageRemain.h; sourceTree = "<group>"; };
+		9DFA3D5D1E4C54D300454875 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DFA3D671E4C551500454875 /* UserInfoApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoApi.swift; sourceTree = "<group>"; };
+		9DFA3D791E4C695B00454875 /* RemainItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemainItemViewController.swift; sourceTree = "<group>"; };
+		9DFA3D7A1E4C695B00454875 /* RemainItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemainItemViewController.xib; sourceTree = "<group>"; };
+		9DFA3D7D1E4C736800454875 /* unicom_package_remain.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = unicom_package_remain.entitlements; sourceTree = "<group>"; };
+		9DFA3D7E1E4C739E00454875 /* unicom_package_remain_widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = unicom_package_remain_widget.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9D269C211E4AC8E2000EFB4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DFA3D611E4C54D300454875 /* UnicomPackageRemain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DFA3D401E4C527D00454875 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DFA3D461E4C527E00454875 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DFA3D561E4C54D300454875 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				9D269C261E4AC8E2000EFB4D /* unicom_package_remain */,
+				9DFA3D471E4C527E00454875 /* unicom_package_remain_widget */,
+				9DFA3D5B1E4C54D300454875 /* UnicomPackageRemain */,
+				9DFA3D441E4C527E00454875 /* Frameworks */,
 				9D269C251E4AC8E2000EFB4D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				9D269C241E4AC8E2000EFB4D /* unicom_package_remain.app */,
+				9DFA3D431E4C527D00454875 /* unicom_package_remain_widget.appex */,
+				9DFA3D5A1E4C54D300454875 /* UnicomPackageRemain.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,9 +146,13 @@
 		9D269C261E4AC8E2000EFB4D /* unicom_package_remain */ = {
 			isa = PBXGroup;
 			children = (
+				9DFA3D7D1E4C736800454875 /* unicom_package_remain.entitlements */,
+				9D269C431E4B00FD000EFB4D /* RemainsController.swift */,
 				9D269C271E4AC8E2000EFB4D /* AppDelegate.swift */,
 				9D269C291E4AC8E2000EFB4D /* ViewController.swift */,
 				9D269C2B1E4AC8E2000EFB4D /* Main.storyboard */,
+				9D269C451E4B0940000EFB4D /* UserInfoApi.swift */,
+				9D269C3F1E4AF8A1000EFB4D /* SettingsController.swift */,
 				9D269C2E1E4AC8E2000EFB4D /* Assets.xcassets */,
 				9D269C301E4AC8E2000EFB4D /* LaunchScreen.storyboard */,
 				9D269C331E4AC8E2000EFB4D /* Info.plist */,
@@ -64,7 +160,49 @@
 			path = unicom_package_remain;
 			sourceTree = "<group>";
 		};
+		9DFA3D441E4C527E00454875 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DFA3D451E4C527E00454875 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9DFA3D471E4C527E00454875 /* unicom_package_remain_widget */ = {
+			isa = PBXGroup;
+			children = (
+				9DFA3D7E1E4C739E00454875 /* unicom_package_remain_widget.entitlements */,
+				9DFA3D791E4C695B00454875 /* RemainItemViewController.swift */,
+				9DFA3D7A1E4C695B00454875 /* RemainItemViewController.xib */,
+				9DFA3D481E4C527E00454875 /* TodayViewController.swift */,
+				9DFA3D4A1E4C527E00454875 /* MainInterface.storyboard */,
+				9DFA3D4D1E4C527E00454875 /* Info.plist */,
+			);
+			path = unicom_package_remain_widget;
+			sourceTree = "<group>";
+		};
+		9DFA3D5B1E4C54D300454875 /* UnicomPackageRemain */ = {
+			isa = PBXGroup;
+			children = (
+				9DFA3D5C1E4C54D300454875 /* UnicomPackageRemain.h */,
+				9DFA3D5D1E4C54D300454875 /* Info.plist */,
+				9DFA3D671E4C551500454875 /* UserInfoApi.swift */,
+			);
+			path = UnicomPackageRemain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9DFA3D571E4C54D300454875 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DFA3D5E1E4C54D300454875 /* UnicomPackageRemain.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		9D269C231E4AC8E2000EFB4D /* unicom_package_remain */ = {
@@ -74,15 +212,54 @@
 				9D269C201E4AC8E2000EFB4D /* Sources */,
 				9D269C211E4AC8E2000EFB4D /* Frameworks */,
 				9D269C221E4AC8E2000EFB4D /* Resources */,
+				9DFA3D541E4C527E00454875 /* Embed App Extensions */,
+				9DFA3D661E4C54D300454875 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9DFA3D4F1E4C527E00454875 /* PBXTargetDependency */,
+				9DFA3D601E4C54D300454875 /* PBXTargetDependency */,
 			);
 			name = unicom_package_remain;
 			productName = unicom_package_remain;
 			productReference = 9D269C241E4AC8E2000EFB4D /* unicom_package_remain.app */;
 			productType = "com.apple.product-type.application";
+		};
+		9DFA3D421E4C527D00454875 /* unicom_package_remain_widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DFA3D531E4C527E00454875 /* Build configuration list for PBXNativeTarget "unicom_package_remain_widget" */;
+			buildPhases = (
+				9DFA3D3F1E4C527D00454875 /* Sources */,
+				9DFA3D401E4C527D00454875 /* Frameworks */,
+				9DFA3D411E4C527D00454875 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = unicom_package_remain_widget;
+			productName = unicom_package_remain_widget;
+			productReference = 9DFA3D431E4C527D00454875 /* unicom_package_remain_widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		9DFA3D591E4C54D300454875 /* UnicomPackageRemain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DFA3D631E4C54D300454875 /* Build configuration list for PBXNativeTarget "UnicomPackageRemain" */;
+			buildPhases = (
+				9DFA3D551E4C54D300454875 /* Sources */,
+				9DFA3D561E4C54D300454875 /* Frameworks */,
+				9DFA3D571E4C54D300454875 /* Headers */,
+				9DFA3D581E4C54D300454875 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnicomPackageRemain;
+			productName = UnicomPackageRemain;
+			productReference = 9DFA3D5A1E4C54D300454875 /* UnicomPackageRemain.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -97,6 +274,27 @@
 					9D269C231E4AC8E2000EFB4D = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 9S96W6XKQ8;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					9DFA3D421E4C527D00454875 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9S96W6XKQ8;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					9DFA3D591E4C54D300454875 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9S96W6XKQ8;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -115,6 +313,8 @@
 			projectRoot = "";
 			targets = (
 				9D269C231E4AC8E2000EFB4D /* unicom_package_remain */,
+				9DFA3D421E4C527D00454875 /* unicom_package_remain_widget */,
+				9DFA3D591E4C54D300454875 /* UnicomPackageRemain */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +330,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9DFA3D411E4C527D00454875 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DFA3D4C1E4C527E00454875 /* MainInterface.storyboard in Resources */,
+				9DFA3D7C1E4C695B00454875 /* RemainItemViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DFA3D581E4C54D300454875 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -137,12 +353,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D269C401E4AF8A1000EFB4D /* SettingsController.swift in Sources */,
+				9D269C441E4B00FD000EFB4D /* RemainsController.swift in Sources */,
 				9D269C2A1E4AC8E2000EFB4D /* ViewController.swift in Sources */,
 				9D269C281E4AC8E2000EFB4D /* AppDelegate.swift in Sources */,
+				9D269C461E4B0940000EFB4D /* UserInfoApi.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DFA3D3F1E4C527D00454875 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DFA3D491E4C527E00454875 /* TodayViewController.swift in Sources */,
+				9DFA3D7B1E4C695B00454875 /* RemainItemViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DFA3D551E4C54D300454875 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DFA3D681E4C551500454875 /* UserInfoApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9DFA3D4F1E4C527E00454875 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9DFA3D421E4C527D00454875 /* unicom_package_remain_widget */;
+			targetProxy = 9DFA3D4E1E4C527E00454875 /* PBXContainerItemProxy */;
+		};
+		9DFA3D601E4C54D300454875 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9DFA3D591E4C54D300454875 /* UnicomPackageRemain */;
+			targetProxy = 9DFA3D5F1E4C54D300454875 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9D269C2B1E4AC8E2000EFB4D /* Main.storyboard */ = {
@@ -159,6 +408,14 @@
 				9D269C311E4AC8E2000EFB4D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9DFA3D4A1E4C527E00454875 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DFA3D4B1E4C527E00454875 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -260,10 +517,13 @@
 		9D269C371E4AC8E2000EFB4D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = unicom_package_remain/unicom_package_remain.entitlements;
 				DEVELOPMENT_TEAM = 9S96W6XKQ8;
 				INFOPLIST_FILE = unicom_package_remain/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zhujinliang.ios.unicom-package-remain";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -273,13 +533,91 @@
 		9D269C381E4AC8E2000EFB4D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = unicom_package_remain/unicom_package_remain.entitlements;
 				DEVELOPMENT_TEAM = 9S96W6XKQ8;
 				INFOPLIST_FILE = unicom_package_remain/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zhujinliang.ios.unicom-package-remain";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		9DFA3D511E4C527E00454875 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = unicom_package_remain_widget/unicom_package_remain_widget.entitlements;
+				DEVELOPMENT_TEAM = 9S96W6XKQ8;
+				INFOPLIST_FILE = unicom_package_remain_widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zhujinliang.ios.unicom-package-remain.unicom-package-remain-widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9DFA3D521E4C527E00454875 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = unicom_package_remain_widget/unicom_package_remain_widget.entitlements;
+				DEVELOPMENT_TEAM = 9S96W6XKQ8;
+				INFOPLIST_FILE = unicom_package_remain_widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zhujinliang.ios.unicom-package-remain.unicom-package-remain-widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		9DFA3D641E4C54D300454875 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9S96W6XKQ8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = UnicomPackageRemain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhujinliang.ios.UnicomPackageRemain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9DFA3D651E4C54D300454875 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9S96W6XKQ8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = UnicomPackageRemain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhujinliang.ios.UnicomPackageRemain;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -302,6 +640,25 @@
 				9D269C381E4AC8E2000EFB4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DFA3D531E4C527E00454875 /* Build configuration list for PBXNativeTarget "unicom_package_remain_widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DFA3D511E4C527E00454875 /* Debug */,
+				9DFA3D521E4C527E00454875 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DFA3D631E4C54D300454875 /* Build configuration list for PBXNativeTarget "UnicomPackageRemain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DFA3D641E4C54D300454875 /* Debug */,
+				9DFA3D651E4C54D300454875 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
