@@ -48,11 +48,11 @@ class RemainItemViewController: UIViewController {
     func setData(_ data: UserInfoData){
         self.data = data
         
-        DispatchQueue.main.async {
+        //DispatchQueue.main.async {
             self.remainTitle.text = data.remainTitle
             self.remainNum.text = "\(data.numberStr) \(data.unit)"
             self.progress.progress = data.persent / 100
-        }
+        //}
     }
 
     /*

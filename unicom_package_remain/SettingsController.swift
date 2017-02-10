@@ -49,7 +49,6 @@ class SettingsController : UIViewController, UITableViewDataSource, UITableViewD
                 let regex = try NSRegularExpression(pattern: pattern, options: .caseInsensitive)
                 if let match = regex.firstMatch(in: clipboard, options: [], range: NSMakeRange(0, clipboard.characters.count)) {
                     AuthToken.text = (clipboard as NSString).substring(with: match.rangeAt(1))
-                    // TODO: BUG 应该取分组内的值
                     return
                 }
             } catch {

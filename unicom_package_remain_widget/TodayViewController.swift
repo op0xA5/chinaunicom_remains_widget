@@ -26,22 +26,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         stackView.distribution = .fillEqually
         stackView.spacing = 12        
         
-        if let items = userInfo.dataByShownItems(defaultStatus: true, filterShown: false) {
-            for item in items {
-                if item.isShow {
-                    stackView.addArrangedSubview(RemainItemViewController(data: item.data).view)
-                }
-            }
-        }
-        
-        if let flushTime = self.userInfo.data?.flushDateTime {
-            lastUpdateTime = flushTime
-            let formatter = DateFormatter()
-            formatter.dateFormat = "更新时间: yyyy-MM-dd HH:mm"
-            self.refreshTime.setTitle(formatter.string(from: flushTime), for: UIControlState.normal)
-        } else {
-            self.refreshTime.setTitle("点击更新", for: UIControlState.normal)
-        }
+        updateRemainData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -77,21 +62,31 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             }
             completionHandler(NCUpdateResult.failed)
         }
-        
-        completionHandler(NCUpdateResult.newData)
     }
 
-
+    var subviewControllers : [RemainItemViewController]?
     func updateRemainData() {
         DispatchQueue.main.async {
-            for view in self.stackView.arrangedSubviews {
-                self.stackView.removeArrangedSubview(view)
-            }
-            
-            if let items = self.userInfo.dataByShownItems(defaultStatus: true, filterShown: false) {
-                for item in items {
-                    if item.isShow {
-                        self.stackView.addArrangedSubview(RemainItemViewController(data: item.data).view)
+            if let items = self.userInfo.dataByShownItems(defaultStatus: true, filterShown: true) {
+                if self.subviewControllers == nil {
+                    self.subviewControllers = [RemainItemViewController]()
+                }
+                
+                for i in 0 ..< min(self.subviewControllers!.count, items.count) {
+                    self.subviewControllers![i].setData(items[i].data)
+                }
+                if self.stackView.arrangedSubviews.count > items.count {
+                    for subview in self.stackView.arrangedSubviews[items.count ..< self.stackView.arrangedSubviews.count] {
+                        self.stackView.removeArrangedSubview(subview)
+                    }
+                } else if self.stackView.arrangedSubviews.count < items.count {
+                    if self.subviewControllers!.count < items.count {
+                        for item in items[self.subviewControllers!.count ..< items.count] {
+                            self.subviewControllers!.append(RemainItemViewController(data: item.data))
+                        }
+                    }
+                    for subviewCtrl in self.subviewControllers![self.stackView.arrangedSubviews.count ..< items.count] {
+                        self.stackView.addArrangedSubview(subviewCtrl.view)
                     }
                 }
             }
