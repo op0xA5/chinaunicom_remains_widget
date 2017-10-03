@@ -14,6 +14,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     var userInfo : UserInfoApi = UserInfoApi(loadCredential: true, loadData: true)
     var lastUpdateTime : Date = Date(timeIntervalSince1970: 0)
     
+    var updateFlushDateTimer : Timer?
+    
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var refreshTime: UIButton!
@@ -25,6 +27,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
         stackView.spacing = 12        
+        
+        updateFlushDateTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(TodayViewController.updateFlushTime), userInfo: nil, repeats: true)
         
         updateRemainData()
     }
@@ -51,16 +55,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             DispatchQueue.main.async {
                 self.activityIndicator.stopAnimating()
             }
-            if ok {
-                if let flushTime = self.userInfo.data?.flushDateTime {
-                    updated = flushTime > self.lastUpdateTime
-                    self.lastUpdateTime = flushTime
-                }
-                self.updateRemainData()
-                completionHandler(updated ? NCUpdateResult.newData : NCUpdateResult.noData)
-                return
+        
+            if let flushTime = self.userInfo.data?.flushDateTime {
+                updated = flushTime > self.lastUpdateTime
+                self.lastUpdateTime = flushTime
             }
-            completionHandler(NCUpdateResult.failed)
+            self.updateRemainData()
+            completionHandler(updated ? NCUpdateResult.newData : NCUpdateResult.noData)
+            return
         }
     }
 
@@ -91,15 +93,34 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 }
             }
             
-            if let flushTime = self.userInfo.data?.flushDateTime {
-                let formatter = DateFormatter()
-                formatter.dateFormat = "更新时间: yyyy-MM-dd HH:mm"
-                self.refreshTime.setTitle(formatter.string(from: flushTime), for: UIControlState.normal)
-            } else {
-                self.refreshTime.setTitle("点击更新", for: UIControlState.normal)
-            }
+            self.updateFlushTime()
         }
     }
+    
+    func updateFlushTime() {
+        if let flushTime = self.userInfo.data?.flushDateTime {
+            var title = ""
+            let inter = -flushTime.timeIntervalSinceNow
+            if inter < 60 {
+                title = String.init(format: "更新时间: %d 秒前", Int(inter))
+            } else if inter < 60 * 5 {
+                title = String.init(format: "更新时间: %d 分钟前", Int(inter / 60))
+            } else if inter < 60 * 10 {
+                title = "更新时间: 约 10 分钟前"
+            } else if inter < 60 * 15 {
+                title = "更新时间: 约 15 分钟前"
+            } else {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "更新时间: yyyy-MM-dd HH:mm"
+                title = formatter.string(from: flushTime)
+            }
+            
+            self.refreshTime.setTitle(title, for: UIControlState.normal)
+        } else {
+            self.refreshTime.setTitle("点击更新", for: UIControlState.normal)
+        }
+    }
+    
     @IBAction func refreshTimeClick(_ sender: Any) {
         self.activityIndicator.startAnimating()
         userInfo.fetchData { (ok) in

@@ -49,12 +49,17 @@ class SettingsController : UIViewController, UITableViewDataSource, UITableViewD
                 let regex = try NSRegularExpression(pattern: pattern, options: .caseInsensitive)
                 if let match = regex.firstMatch(in: clipboard, options: [], range: NSMakeRange(0, clipboard.characters.count)) {
                     AuthToken.text = (clipboard as NSString).substring(with: match.rangeAt(1))
+                    
+                    let alert = UIAlertController(title: nil, message: "已更新登录Token", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "好的", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
                     return
                 }
             } catch {
                 print(error)
             }
-            
+/*
             do {
                 let pattern = "^([A-Za-z0-9_-]+\\.[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]+)$"
                 let regex = try NSRegularExpression(pattern: pattern, options: .caseInsensitive)
@@ -65,7 +70,7 @@ class SettingsController : UIViewController, UITableViewDataSource, UITableViewD
             } catch {
                 print(error)
             }
-            
+ */
             let alert = UIAlertController(title: nil, message: "未从剪贴板中找到登录Token", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "好的", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)

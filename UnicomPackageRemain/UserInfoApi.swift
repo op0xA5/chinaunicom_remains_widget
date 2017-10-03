@@ -10,9 +10,10 @@ import Foundation
 public class UserInfoApi {
     public var data : UserInfo?
     
-    public let SuiteName = "group.com.zhujinliang.ios.unicom_package_remain"
+    public let SuiteName = "group.com.9yibao.ios.unicomremains"
     
-    public let ApiUrl : String = "http://m.client.10010.com/mobileService/home/queryUserInfoFive.htm?desmobiel={phone}&showType=1&version=iphone_c@5.01"
+    public let ApiUrl : String = "http://m.client.10010.com/mobileService/home/queryUserInfoFive.htm"
+    public let ApiPostData : String = "showType=3&version=android%405.41&desmobiel={phone}"
     
     public let autoRefreshInterval : TimeInterval = 5 * 60
     
@@ -40,7 +41,7 @@ public class UserInfoApi {
     }
     
     public func parseJson(_ json: String) -> Bool {
-        data = UserInfo()
+        var tmpData = UserInfo()
         if json == "" {
             return false
         }
@@ -49,14 +50,14 @@ public class UserInfoApi {
             try res = JSONSerialization.jsonObject(with: json.data(using: String.Encoding.utf8)!, options: JSONSerialization.ReadingOptions())
             
             if let resDict = res as? Dictionary<String, Any> {
-                data!.code = (resDict["code"] as? String) ?? ""
+                tmpData.code = (resDict["code"] as? String) ?? ""
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "截至 yyyy-MM-dd HH:mm"
-                data!.flushDateTime = dateFormatter.date(from: (resDict["flush_date_time"] as? String) ?? "") ?? Date(timeIntervalSince1970: 0)
+                tmpData.flushDateTime = dateFormatter.date(from: (resDict["flush_date_time"] as? String) ?? "") ?? Date(timeIntervalSince1970: 0)
                 
                 if let resDataDict = resDict["data"] as? Dictionary<String, Any> {
                     if let resDataListDict = resDataDict["dataList"] as? [Dictionary<String, Any>] {
-                        data!.data = [UserInfoData]()
+                        tmpData.data = [UserInfoData]()
                         
                         for var resItemDict in resDataListDict {
                             var item = UserInfoData()
@@ -66,11 +67,13 @@ public class UserInfoApi {
                             item.numberStr = (resItemDict["number"] as? String) ?? ""
                             item.usedTitle = (resItemDict["usedTitle"] as? String) ?? ""
                             item.remainTitle = (resItemDict["remainTitle"] as? String) ?? ""
-                            data!.data!.append(item)
+                            tmpData.data!.append(item)
                         }
                     }
                 }
             }
+            
+            self.data = tmpData
         } catch {
             print(error)
             return false
@@ -182,9 +185,11 @@ public class UserInfoApi {
         
         let url = URL(string: ApiUrl.replacingOccurrences(of: "{phone}", with: PhoneNum))
         print("Fetch URL: \(url!.absoluteString)")
+        let postData = ApiPostData.replacingOccurrences(of: "{phone}", with: PhoneNum)
         
         var request = URLRequest(url: url!)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
+        request.httpBody = postData.data(using: .utf8)
         /*
          var cookie = AuthCookie
          if cookie == "" {
@@ -193,7 +198,7 @@ public class UserInfoApi {
          */
         let cookie = "a_token=\(AuthToken)"
         request.setValue(cookie, forHTTPHeaderField: "Cookie")
-        
+
         let session = URLSession(configuration: URLSessionConfiguration.default)
         let task = session.dataTask(with: request) { (data, response, error) in
             if error != nil {
